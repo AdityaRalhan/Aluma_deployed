@@ -71,7 +71,7 @@ function Page() {
       });
       const data = await res.json();
       console.log("Full API response:", data);
-      console.log("Full ai response :", data.aiAnalysis);
+      // console.log("Full ai response :", data.aiAnalysis);
 
       if (res.ok) {
         setResult({
