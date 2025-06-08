@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import dotenv from "dotenv";
 import AssessmentDashboard from "../selfAssessmentDashboard/page";
@@ -27,7 +27,7 @@ const options = [
   { label: "Strongly Agree", value: 5 },
 ];
 
-export default function SelfAssessmentPage() {
+function Page() {
   const searchParams = useSearchParams();
   const userId = searchParams.get("userId");
 
@@ -318,5 +318,13 @@ export default function SelfAssessmentPage() {
         }
       `}</style>
     </div>
+  );
+}
+
+export default function SelfAssessmentPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-white">Loading...</div>}>
+      <Page />
+    </Suspense>
   );
 }
