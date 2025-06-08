@@ -101,7 +101,7 @@ export default function Home() {
                   {/* Logo placeholder with enhanced styling */}
                   <div className="relative z-10 w-48 h-48 lg:w-56 lg:h-56 rounded-full bg-gradient-to-br from-cyan-100/90 to-blue-100/90 backdrop-blur-sm flex items-center justify-center shadow-xl">
                     <img
-                      src="/aluma_logo.png"
+                      src="/Aluma_logo.png"
                       alt="Aluma Logo"
                       className="w-32 h-32 lg:w-40 lg:h-40 object-contain filter drop-shadow-lg"
                     />
