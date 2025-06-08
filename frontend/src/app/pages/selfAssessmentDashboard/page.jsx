@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useEffect } from "react";
 import {
   Brain,
@@ -9,10 +10,10 @@ import {
   ChevronLeft,
   ChevronRight,
   Eye,
-  Calendar,
+  
 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import Calender from "@/sections/calender";
+
 
 export default function AssessmentDashboard({ result }) {
     const [name, setName] = useState("");
@@ -326,7 +327,7 @@ export default function AssessmentDashboard({ result }) {
               </div>
             </div>
 
-            {/* <Calender /> */}
+            
           </div>
         </div>
       </div>

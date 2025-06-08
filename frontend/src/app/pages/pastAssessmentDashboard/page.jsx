@@ -10,10 +10,10 @@ import {
   ChevronLeft,
   ChevronRight,
   Eye,
-  Calendar,
+  
 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import Calender from "@/sections/calender";
+
 
 export default function PastAssessmentDashboard({ result }) {
   const [data, setData] = useState(null);
@@ -359,7 +359,7 @@ export default function PastAssessmentDashboard({ result }) {
               </div>
             </div>
 
-            {/* <Calender /> */}
+            
           </div>
         </div>
       </div>

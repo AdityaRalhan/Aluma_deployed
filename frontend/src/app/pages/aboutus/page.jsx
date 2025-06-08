@@ -1,3 +1,4 @@
+'use client';
 import React from "react";
 import { Music, Bot, Book, PencilLine, Brain, Sparkles } from "lucide-react";
 

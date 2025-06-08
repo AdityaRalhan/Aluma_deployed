@@ -1,3 +1,4 @@
+'use client';
 import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards'
 import React from 'react'
 

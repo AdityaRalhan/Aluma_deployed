@@ -1,9 +1,9 @@
+'use client';
 import React from "react";
 import { ArrowRight, Brain, Heart, Target, BarChart3, Calendar, TrendingUp } from "lucide-react";
 import { useRouter } from "next/navigation";
 import dotenv from "dotenv";
 import { useState } from "react";
-import { set } from "mongoose";
 
 dotenv.config();
 
