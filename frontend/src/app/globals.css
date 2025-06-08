@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme inline {
+  --animate-aurora: aurora 60s linear infinite;
+
+  @keyframes aurora {
+    from {
+      background-position: 50% 50%, 50% 50%;
+    }
+    to {
+      background-position: 350% 50%, 350% 50%;
+    }
+  }
+
+  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+}
+
+html, body {
+  @apply bg-[#1D5DCB];
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;   /* full viewport height */
+  overflow-x: hidden;  /* prevent horizontal scroll */
+  height: auto;        /* let height grow as needed */
+}
+
+@keyframes glow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-glow {
+  animation: glow 3s ease infinite;
+}
