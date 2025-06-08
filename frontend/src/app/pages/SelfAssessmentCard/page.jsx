@@ -170,7 +170,7 @@ export default function SelfAssessmentCard() {
       <div className="flex items-center justify-between">
         <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/30">
           <div className="text-center">
-            {/* <div className="text-2xl font-bold text-rose-700 mb-1">{data.totalScore}</div> */}
+            
             <div className="text-xs text-rose-500 tracking-wide">
             Keep growing! </div>
           </div>

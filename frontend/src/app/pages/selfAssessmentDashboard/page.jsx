@@ -25,7 +25,10 @@ export default function AssessmentDashboard({ result }) {
   const stressPercentage = (stress / 10) * 100;
   const focusPercentage = (focus / 10) * 100;
   const positivityPercentage = (positivity / 10) * 100;
-  const totalPercentage = (result.totalScore / 50) * 100;
+  const totalPercentage = result?.totalScore
+  ? (result.totalScore / 50) * 100
+  : 0;
+
 
   const CircularProgress = ({ percentage, color, size = 180 }) => {
     const strokeWidth = 10;
