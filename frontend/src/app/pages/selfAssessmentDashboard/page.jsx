@@ -17,7 +17,7 @@ import { useRouter } from "next/navigation";
 
 export default function AssessmentDashboard({ result }) {
     const [name, setName] = useState("");
-  const { stress, focus, positivity } = result.categoryScores;
+    const { stress, focus, positivity } = result?.categoryScores || {};
   const { analysis, advice, importantReminders } = result.aiAnalysis || {};
   const router = useRouter();
 
