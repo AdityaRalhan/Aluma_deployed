@@ -15,9 +15,11 @@ export default function Home() {
   const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   const [name, setName] = useState("User");
-  const [showPopup, setShowPopup] = useState(false);
   const [token, setToken] = useState(null);
   const [userId, setUserId] = useState(null);
+  const [result, setResult] = useState(null);
+const [loading, setLoading] = useState(true);
+
 
   const quotes = [
     {
@@ -100,34 +102,23 @@ export default function Home() {
         return;
       } catch (error) {
         console.error("Error fetching user name:", error);
-        return "User";
+        setName("User");
+      }
+      finally {
+        setLoading(false); // hide loader once done
       }
     };
     handleFetchName();
   });
 
-  useEffect(() => {
-    setIsVisible(true);
-    // Show popup after a short delay to ensure the component is rendered
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-    }, 1500);
+  if (loading) {
+    return (
+      <div className="w-full h-screen flex items-center justify-center">
+        <div className="text-lg font-semibold animate-pulse">Loading dashboard...</div>
+      </div>
+    );
+  }
 
-    return () => clearTimeout(timer);
-  }, []);
-
-  const handleClosePopup = async () => {
-    setShowPopup(false);
-    try {
-      await axios.patch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/user/${userId}`,
-        { isFirstLogin: false },
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
-    } catch (err) {
-      console.error("Error updating isFirstLogin:", err);
-    }
-  };
 
   return (
     <AuroraBackground className="w-full">
