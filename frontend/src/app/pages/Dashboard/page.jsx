@@ -99,13 +99,12 @@ export default function Home() {
         setName(data.name || "User");
         return;
       } catch (error) {
-        console.error("Error fetching user name:", error);
-        return "User";
+        console.error("Error fetching user name:", error)
+        setName("User");
+        
       }
-      
     };
     handleFetchName();
-    
   });
 
 
