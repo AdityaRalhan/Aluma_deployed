@@ -104,11 +104,10 @@ const [loading, setLoading] = useState(true);
         console.error("Error fetching user name:", error);
         setName("User");
       }
-      finally {
-        setLoading(false); // hide loader once done
-      }
+      
     };
     handleFetchName();
+    setLoading(false);
   });
 
   if (loading) {
