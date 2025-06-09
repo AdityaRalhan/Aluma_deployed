@@ -17,8 +17,6 @@ export default function Home() {
   const [name, setName] = useState("User");
   const [token, setToken] = useState(null);
   const [userId, setUserId] = useState(null);
-  const [result, setResult] = useState(null);
-const [loading, setLoading] = useState(true);
 
 
   const quotes = [
@@ -102,21 +100,13 @@ const [loading, setLoading] = useState(true);
         return;
       } catch (error) {
         console.error("Error fetching user name:", error);
-        setName("User");
+        return "User";
       }
       
     };
     handleFetchName();
-    setLoading(false);
+    
   });
-
-  if (loading) {
-    return (
-      <div className="w-full h-screen flex items-center justify-center">
-        <div className="text-lg font-semibold animate-pulse">Loading dashboard...</div>
-      </div>
-    );
-  }
 
 
   return (
